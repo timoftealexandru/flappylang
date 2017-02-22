@@ -4,23 +4,25 @@
 
 ## STRUCTURE FLAPPY-LANG
 
-#PRINT: 
-	* NUMBERS          							[X]
-	* STRING           							[X]
-	* EXPRESSIONS      							[X]
-	* VARIABLES        							[X]
+# PRINT
 
-#VARIABLES:
-	* ASSIGNING VARIABLES    					[X]
-	* ASSIGNING VARIABLES TO OTHER VARIABELS    [X]
+- [x] NUMBERS
+- [x] STRING
+- [x] EXPRESSIONS
+- [x] VARIABLES
 
-#PRINT IN SH:										   	
-    * INPUT                                     [X]
+#VARIABLES
 
-#STATEMENTS:
-	* IF STATEMENTS							    [X]
-	* PARSING CONDITIONS						[X]
+- [x] ASSIGNING VARIABLES
+- [x] ASSIGNING VARIABLES TO OTHER VARIABLES
 
+#PRINT IN SH
+
+- [x] INPUT
+
+#STATEMENTS
+- [x] IF STATEMENTS
+- [X] PARSING CONDITIONS
 
 ##DOCUMENTATION
 
