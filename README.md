@@ -1,6 +1,6 @@
 # FlappyLang-Python Interpreter
 
-#####FlappyLang is open source minimal programming language with *basic* syntax. 
+##### FlappyLang is open source minimal programming language with *basic* syntax. 
 
 ## STRUCTURE FLAPPY-LANG
 
@@ -11,29 +11,30 @@
 - [x] EXPRESSIONS
 - [x] VARIABLES
 
-#VARIABLES
+# VARIABLES
 
 - [x] ASSIGNING VARIABLES
 - [x] ASSIGNING VARIABLES TO OTHER VARIABLES
 
-#PRINT IN SH
+# PRINT IN SH
 
 - [x] INPUT
 
-#STATEMENTS
+# STATEMENTS
+
 - [x] IF STATEMENTS
 - [X] PARSING CONDITIONS
 
-##DOCUMENTATION
+## DOCUMENTATION
 
-###PRINT:
+### PRINT:
 
 ```flappy
 print "Hello World" => LowerCase
 PRINT "HELLO WORLD" => UpperCase
 ```
 
-###NUMBER:
+### NUMBER:
 
 ```flappy
 10 + 2 => Addition
@@ -42,34 +43,37 @@ PRINT "HELLO WORLD" => UpperCase
 10 * 2 => Multiplication
 print 10
 ```
+
 ##### You have possibility to *print* number.
 
-###STRING:
+### STRING:
 
 ```flappy
 print "STRING"
 ```
 
-###EXPRESSIONS:
+### EXPRESSIONS:
+
 ```flappy
 10 * (2+4) => Expression
 ```
 
-###VARIABLES:
+### VARIABLES:
 
 ```flappy
 $var nameLang = "Flappy"
 print $var
 ```
 
-###ASSIGNING VARIABLES TO OTHER VARIABLES
+### ASSIGNING VARIABLES TO OTHER VARIABLES
 
 ```flappy
 $var1 = 10 => Initializing variables
 $var2 = $var1 => Assigning variables to other variables
 print $var2 => 10 => Output variables after assigning
 ```
-###INPUT
+
+### INPUT
 
 ```flappy
 input "Enter your name: " $name
@@ -78,8 +82,7 @@ input => function
 $name => variables
 ```
 
-
-###STATEMENTS AND PARSING CONDITIONS(IF, THEN)
+### STATEMENTS AND PARSING CONDITIONS(IF, THEN)
 
 ```flappy
 if 1 == 1 then => 1 == 1 (eval True)
@@ -87,12 +90,14 @@ if 1 == 1 then => 1 == 1 (eval True)
 endif => Close IF
 ```
 
-###EXTENSION
+### EXTENSION
+
 ```flappy
 .fa //This is extension file for FlappyLang
 ```
 
-###COMMENTS
+### COMMENTS
+
 ```flappy
 //This is comment in (FlappyLang)
 ```
