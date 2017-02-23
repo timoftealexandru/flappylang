@@ -1,3 +1,4 @@
+# Created by Mihai Sandor & Dobai David
 import sys
 from flappy_parser import *
 from flappy_lexer import *
