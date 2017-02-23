@@ -1,29 +1,32 @@
-if 1 == 1 then
-    print "Hello World"
-endif
+#Here's an example of a program which computes a factorial:
 
-if 1 == 2 then
-    print "Hello World"
-endif
+n := 5;
+p := 1;
+while n > 0 do
+  p := p * n;
+  n := n - 1
+end;
 
-$authors = "David, Mihai"
-print $authors
+#Assignment statements (all variables are global and can only store integers):
 
-$addition = 10 + 2
-print $addition
+x := 1;
 
-$decrease = 10 -2
-print $decrease
+#Conditional statements:
 
-$division = 10 / 2
-print $division
+if x = 1 then
+  y := 2
+else
+  y := 3
+end;
 
-$multiplication = 10 * 2
-print $multiplication
+#While loops:
 
-$expression = 10 * (2 + 4)
-print $expression
+while x < 10 do
+  x := x + 1
+end;
 
-$var1 = 10
-$var2 = $var1
-print $var2
+#Compound statements (separated by semicolons):
+
+x := 1;
+y := 2
+
