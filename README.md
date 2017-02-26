@@ -1,4 +1,4 @@
-# FlappyLang-Python Interpreter
+# FlappyLang-Python Interpreter(Core)
 
 ##### FlappyLang is open source minimal programming language with *basic* syntax. 
 
@@ -102,4 +102,4 @@ endif => Close IF
 //This is comment in (FlappyLang)
 ```
 
-#### Comming soon add docs for imperative language.
+#### Coming soon add docs for imperative language.
