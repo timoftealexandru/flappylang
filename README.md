@@ -103,3 +103,27 @@ endif => Close IF
 ```
 
 #### Coming soon add docs for imperative language.
+
+#### TODO: Copy the following files in these folders and modify import routes:
+
+##### In core(directory):
+
+* flappy_ast.py
+* flappy_combinators.py
+* euqality.py
+* flappy_parser.py
+
+##### In lexer(directory):
+
+* flappy_lexer.py
+* flappy_lexer_divider.py
+* lexer.py
+
+##### In test(directory):
+
+* test.py
+* test_combinators.py
+* test_eval.py
+* test_flappy_parser.py
+* test_lexer.py
+
