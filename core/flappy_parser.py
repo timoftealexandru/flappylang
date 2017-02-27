@@ -1,7 +1,7 @@
 # Created by Mihai Sandor & Dobai David
-from flappy_lexer import *
-from combinators import *
-from flappy_ast import *
+from core.combinators import *
+from core.flappy_ast import *
+from lexer.flappy_lexer import *
 
 
 # Basic parsers

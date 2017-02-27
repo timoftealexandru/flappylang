@@ -1,5 +1,5 @@
 # Created by Mihai Sandor & Dobai David
-from equality import *
+from core.equality import *
 
 
 class Statement(Equality):

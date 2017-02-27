@@ -1,6 +1,7 @@
 # Created by Mihai Sandor & Dobai David
 import sys
-from flappy_lexer import *
+
+from lexer.flappy_lexer import *
 
 if __name__ == '__main__':
     filename = sys.argv[1]

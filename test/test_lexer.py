@@ -1,6 +1,6 @@
 # Created by Mihai Sandor & Dobai David
 import unittest
-from lexer import *
+from lexer.lexer import *
 
 KEYWORD = 'KEYWORD'
 INT = 'INT'

@@ -1,6 +1,7 @@
 # Created by Mihai Sandor & Dobai David
 import sys
-from flappy_parser import *
+
+from core.flappy_parser import *
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
