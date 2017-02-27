@@ -1,1 +1,1 @@
-from flappy import flappy
+from flappylang import flappylang

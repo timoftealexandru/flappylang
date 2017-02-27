@@ -6,7 +6,7 @@ from lexer.flappy_lexer import *
 
 
 def usage():
-    sys.stderr.write('Usage: flappy filename\n')
+    sys.stderr.write('Usage: flappylang filename\n')
     sys.exit(1)
 
 

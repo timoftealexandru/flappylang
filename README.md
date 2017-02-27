@@ -2,7 +2,7 @@
 
 ##### FlappyLang is open source minimal programming language with *basic* syntax. 
 
-## STRUCTURE FLAPPY-LANG
+## STRUCTURE FlappyLang
 
 # PRINT
 
@@ -16,7 +16,7 @@
 - [x] ASSIGNING VARIABLES
 - [x] ASSIGNING VARIABLES TO OTHER VARIABLES
 
-# PRINT IN SH
+# PRINT IN TERMINAL
 
 - [x] INPUT
 
