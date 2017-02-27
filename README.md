@@ -112,6 +112,7 @@ endif => Close IF
 * flappy_combinators.py
 * euqality.py
 * flappy_parser.py
+* flappy_parser_divider.py
 
 ##### In lexer(directory):
 
@@ -126,4 +127,3 @@ endif => Close IF
 * test_eval.py
 * test_flappy_parser.py
 * test_lexer.py
-
