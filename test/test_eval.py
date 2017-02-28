@@ -1,7 +1,7 @@
 # Created by Mihai Sandor & Dobai David
 import unittest
 
-from core.flappy_parser import *
+import core.flappy_parser
 
 
 class TestEvaluation(unittest.TestCase):
