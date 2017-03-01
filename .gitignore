@@ -6,3 +6,5 @@ flappy_parser.pyc
 test.pyc
 lexer.pyc
 flappy_lexer.pyc
+__init__.pyc
+test_combinators.pyc
