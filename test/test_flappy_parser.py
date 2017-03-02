@@ -1,7 +1,7 @@
 # Created by Mihai Sandor & Dobai David
 import unittest
 
-from core import flappy_parser
+from core.flappy_parser import *
 
 
 class TestFlappyParser(unittest.TestCase):

@@ -1,8 +1,8 @@
 # Created by Mihai Sandor & Dobai David
 import unittest
 
-from core import combinators
-from lexer import flappy_lexer
+from core.combinators import *
+from lexer.flappy_lexer import *
 
 id = Tag(ID)
 integer = Tag(INT)
