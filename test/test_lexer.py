@@ -1,7 +1,7 @@
 # Created by Mihai Sandor & Dobai David
 import unittest
 
-from lexer import lexer
+from lexer.lexer import *
 
 KEYWORD = 'KEYWORD'
 INT = 'INT'
