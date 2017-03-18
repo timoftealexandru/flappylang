@@ -14,7 +14,7 @@ if (( p3 ))
     f=flappylang.py
     $p3 $f "$1"
 then
-    sleep 0
+    exit;
 fi
 
 if ! (( p && p3 ))
