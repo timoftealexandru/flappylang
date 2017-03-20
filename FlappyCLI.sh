@@ -4,7 +4,7 @@
 p=python
 if (( p ))
     f=flappy.py
-    $p $f "$1"
+    $p $f "$1" # check first argument
 then
     exit;
 fi
@@ -12,12 +12,12 @@ fi
 p3=python3
 if (( p3 ))
     f=flappylang.py
-    $p3 $f "$1"
+    $p3 $f "$1" # check first argument
 then
     exit;
 fi
 
 if ! (( p && p3 ))
 then
-    cd bin && ./flappy $1
+    cd bin && ./flappy $1 # Run REPL
 fi
