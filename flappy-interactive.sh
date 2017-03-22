@@ -19,5 +19,6 @@ fi
 
 if ! (( p && p3 ))
 then
+    #first_line="$([ -r file ] && cd bin && ./flappy $1 file)"
     cd bin && ./flappy $1 # Run REPL
 fi
