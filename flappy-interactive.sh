@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #Created by MihaiSandor on 18-Mar-2017
 
 p=python
@@ -19,6 +19,5 @@ fi
 
 if ! (( p && p3 ))
 then
-    #first_line="$([ -r file ] && cd bin && ./flappy $1 file)"
-    cd bin && ./flappy $1 # Run REPL
+    cd bin && python3 flappy_calc.py # Run REPL & Calculator
 fi
