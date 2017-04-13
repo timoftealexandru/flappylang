@@ -21,6 +21,10 @@ t_EQUALS = r'\='
 t_ignore = r' '
 
 
+def main():
+    print('Welcome to FlappyLang version 0.1. Ctrl + C and type flappy -h for assistance.\n')
+
+
 def t_FLOAT(t):
     r'\d+\.\d+'
     t.value = float(t.value)
@@ -131,9 +135,12 @@ def run(p):
         return p
 
 
+if __name__ == "__main__":
+    main()
+
 while True:
     try:
         s = input('FlappyLang>> ')
-    except EOFError:
+    except KeyboardInterrupt:
         break
     parser.parse(s)

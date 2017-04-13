@@ -2,12 +2,11 @@
  * Created by mihaisandor and dobaidavid on 2/19/17.
  * Modified by Stelian Saracut (github : sstelian)
  */
- 
+
 #include <getopt.h>
 #include <stdio.h>
-#include "flappy-help.h"
 
-int help(int argc, char * argv[])
+int main(int argc, char * argv[])
 {
   int             c;
   const char    * short_opt = "hvnrstepxaHVNRSTEPXA";

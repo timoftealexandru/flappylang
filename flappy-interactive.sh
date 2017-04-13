@@ -19,5 +19,5 @@ fi
 
 if ! (( p && p3 ))
 then
-    cd bin && python3 flappy_calc.py # Run REPL & Calculator
+    cd bin && python3 -W ignore flappy_calc.py # Run REPL & Calculator
 fi
