@@ -12,17 +12,16 @@ def open_file(filename):
     return data
 
 
-def lex(filecontents):
+def lex(file_contents):
     tok = ""
     state = 0
-    isexpr = 0
-    varstarted = 0
+    is_expr = 0
+    var_started = 0
     var = ""
     string = ""
     expr = ""
-    n = ""
-    filecontents = list(filecontents)
-    for char in filecontents:
+    file_contents = list(file_contents)
+    for char in file_contents:
         tok += char
         if tok == " ":
             if state == 0:
@@ -30,40 +29,40 @@ def lex(filecontents):
             else:
                 tok = " "
         elif tok == "\n" or tok == "<EOF>":
-            if expr != "" and isexpr == 1:
+            if expr != "" and is_expr == 1:
                 tokens.append("EXPR:" + expr)
                 expr = ""
-            elif expr != "" and isexpr == 0:
+            elif expr != "" and is_expr == 0:
                 tokens.append("NUM:" + expr)
                 expr = ""
             elif var != "":
                 tokens.append("VAR:" + var)
                 var = ""
-                varstarted = 0
+                var_started = 0
             tok = ""
         elif tok == "=" and state == 0:
-            if expr != "" and isexpr == 0:
+            if expr != "" and is_expr == 0:
                 tokens.append("NUM:" + expr)
                 expr = ""
             if var != "":
                 tokens.append("VAR:" + var)
                 var = ""
-                varstarted = 0
+                var_started = 0
             if tokens[-1] == "EQUALS":
                 tokens[-1] = "EQEQ"
             else:
                 tokens.append("EQUALS")
             tok = ""
         elif tok == "$" and state == 0:
-            varstarted = 1
+            var_started = 1
             var += tok
             tok = ""
-        elif varstarted == 1:
+        elif var_started == 1:
             if tok == "<" or tok == ">":
                 if var != "":
                     tokens.append("VAR:" + var)
                     var = ""
-                    varstarted = 0
+                    var_started = 0
             var += tok
             tok = ""
         elif tok == "PRINT" or tok == "print":
@@ -76,7 +75,7 @@ def lex(filecontents):
             tokens.append("IF")
             tok = ""
         elif tok == "THEN" or tok == "then":
-            if expr != "" and isexpr == 0:
+            if expr != "" and is_expr == 0:
                 tokens.append("NUM:" + expr)
                 expr = ""
             tokens.append("THEN")
@@ -84,11 +83,12 @@ def lex(filecontents):
         elif tok == "INPUT" or tok == "input":
             tokens.append("INPUT")
             tok = ""
-        elif tok == "0" or tok == "1" or tok == "2" or tok == "3" or tok == "4" or tok == "5" or tok == "6" or tok == "7" or tok == "8" or tok == "9":
+        elif tok == "0" or tok == "1" or tok == "2" or tok == "3" or tok == "4" or tok == "5" or tok == "6" or \
+                tok == "7" or tok == "8" or tok == "9":
             expr += tok
             tok = ""
         elif tok == "+" or tok == "-" or tok == "/" or tok == "*" or tok == "(" or tok == ")":
-            isexpr = 1
+            is_expr = 1
             expr += tok
             tok = ""
         elif tok == "\t":
@@ -109,72 +109,71 @@ def lex(filecontents):
     return tokens
 
 
-def evalExpression(expr):
+def eval_expression(expr):
     return eval(expr)
 
 
-def doPRINT(toPRINT):
-    if (toPRINT[0:6] == "STRING"):
-        toPRINT = toPRINT[8:]
-        toPRINT = toPRINT[:-1]
-    elif (toPRINT[0:3] == "NUM"):
-        toPRINT = toPRINT[4:]
-    elif (toPRINT[0:4] == "EXPR"):
-        toPRINT = evalExpression(toPRINT[5:])
-    print(toPRINT)
+def do_print(to_print):
+    if to_print[0:6] == "STRING":
+        to_print = to_print[8:]
+        to_print = to_print[:-1]
+    elif to_print[0:3] == "NUM":
+        to_print = to_print[4:]
+    elif to_print[0:4] == "EXPR":
+        to_print = eval_expression(to_print[5:])
+    print(to_print)
 
 
-def doASSING(varname, varvalue):
-    symbols[varname[4:]] = varvalue
+def do_assign(var_name, var_value):
+    symbols[var_name[4:]] = var_value
 
 
-def getVARIABLE(varname):
-    varname = varname[4:]
-    if varname in symbols:
-        return symbols[varname]
+def get_variable(var_name):
+    var_name = var_name[4:]
+    if var_name in symbols:
+        return symbols[var_name]
     else:
         return "VARIABLE ERROR: Undefined Variable"
         exit()
 
 
-def getINPUT(string, varname):
+def get_input(string, var_name):
     i = input(string[1:-1] + " ")
-    symbols[varname] = "STRING:\"" + i + "\""
+    symbols[var_name] = "STRING:\"" + i + "\""
 
 
 def parse(toks):
     i = 0
-    while (i < len(toks)):
+    while i < len(toks):
         if toks[i] == "ENDIF":
             i += 1
         elif toks[i] + " " + toks[i + 1][0:6] == "PRINT STRING" or toks[i] + " " + toks[i + 1][0:3] == "PRINT NUM" or \
-                        toks[i] + " " + toks[i + 1][0:4] == "PRINT EXPR" or toks[i] + " " + toks[i + 1][
-                                                                                            0:3] == "PRINT VAR":
+                        toks[i] + " " + toks[i + 1][0:4] == "PRINT EXPR" or \
+                        toks[i] + " " + toks[i + 1][0:3] == "PRINT VAR":
             if toks[i + 1][0:6] == "STRING":
-                doPRINT(toks[i + 1])
+                do_print(toks[i + 1])
             elif toks[i + 1][0:3] == "NUM":
-                doPRINT(toks[i + 1])
+                do_print(toks[i + 1])
             elif toks[i + 1][0:4] == "EXPR":
-                doPRINT(toks[i + 1])
+                do_print(toks[i + 1])
             elif toks[i + 1][0:3] == "VAR":
-                doPRINT(getVARIABLE(toks[i + 1]))
+                do_print(get_variable(toks[i + 1]))
             i += 2
         elif toks[i][0:3] + " " + toks[i + 1] + " " + toks[i + 2][0:6] == "VAR EQUALS STRING" or toks[i][0:3] + " " + \
-            toks[i + 1] + " " + toks[i + 2][0:3] == "VAR EQUALS NUM" or toks[i][0:3] + " " + toks[i + 1] + " " + toks[
-                                                                                                                         i + 2][
-                                                                                                                 0:4] == "VAR EQUALS EXPR" or \
+            toks[i + 1] + " " + toks[i + 2][0:3] == "VAR EQUALS NUM" or toks[i][0:3] + " " + toks[i + 1] + \
+            " " + toks[i + 2][0:4] == "VAR EQUALS EXPR" or \
                                 toks[i][0:3] + " " + toks[i + 1] + " " + toks[i + 2][0:3] == "VAR EQUALS VAR":
             if toks[i + 2][0:6] == "STRING":
-                doASSING(toks[i], toks[i + 2])
+                do_assign(toks[i], toks[i + 2])
             elif toks[i + 2][0:3] == "NUM":
-                doASSING(toks[i], toks[i + 2])
+                do_assign(toks[i], toks[i + 2])
             elif toks[i + 2][0:4] == "EXPR":
-                doASSING(toks[i], "NUM:" + str(evalExpression(toks[i + 2][5:])))
+                do_assign(toks[i], "NUM:" + str(eval_expression(toks[i + 2][5:])))
             elif toks[i + 2][0:3] == "VAR":
-                doASSING(toks[i], getVARIABLE(toks[i + 2]))
+                do_assign(toks[i], get_variable(toks[i + 2]))
             i += 3
         elif toks[i] + " " + toks[i + 1][0:6] + " " + toks[i + 2][0:3] == "INPUT STRING VAR":
-            getINPUT(toks[i + 1][7:], toks[i + 2][4:])
+            get_input(toks[i + 1][7:], toks[i + 2][4:])
             i += 3
         elif toks[i] + " " + toks[i + 1][0:3] + " " + toks[i + 2] + " " + toks[i + 3][0:3] + " " + toks[
                 i + 4] == "IF NUM EQEQ NUM THEN":
