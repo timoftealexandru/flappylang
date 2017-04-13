@@ -1,3 +1,6 @@
 git.sh
 *.pyc
 .idea
+bin/parser.out
+bin/parsetab.py
+*__pycache__
