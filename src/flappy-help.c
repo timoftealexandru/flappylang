@@ -1,5 +1,5 @@
 /**
- * Created by mihaisandor and dobaidavid on 2/19/17.
+ * Created by Mihai Sandor and Dobai David on 2/19/17.
  * Modified by Stelian Saracut (github : sstelian)
  */
 
