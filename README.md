@@ -38,7 +38,7 @@ PRINT "HELLO WORLD" => UpperCase
 
 ```flappy
 10 + 2 => Addition
-10 - 2 => Decrase
+10 - 2 => Subtraction
 10 / 2 => Division
 10 * 2 => Multiplication
 print 10
